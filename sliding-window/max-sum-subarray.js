@@ -14,8 +14,8 @@ function max_sub_array_of_size_k(k, arr) {
 }
   
   
-  console.log(`Maximum sum of a subarray of size K: ${max_sub_array_of_size_k(3, [2, 1, 5, 1, 3, 2])}`);
-  console.log(`Maximum sum of a subarray of size K: ${max_sub_array_of_size_k(2, [2, 3, 4, 1, 5])}`);
+console.log(`Maximum sum of a subarray of size K: ${max_sub_array_of_size_k(3, [2, 1, 5, 1, 3, 2])}`);
+console.log(`Maximum sum of a subarray of size K: ${max_sub_array_of_size_k(2, [2, 3, 4, 1, 5])}`);
 
-  // Time complexity: O(N) - each element is only visited once 
-  // Space complexity: O(1) - constant variables
+// Time complexity: O(N) - each element is only visited once 
+// Space complexity: O(1) - constant variables
