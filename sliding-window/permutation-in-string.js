@@ -83,4 +83,4 @@ console.log(`Permutation exist: ${find_permutation('bcdxabcdy', 'bcdyabcdx')}`);
 console.log(`Permutation exist: ${find_permutation('aaacb', 'abc')}`);
 
 // Time complexity: O(N+M)
-// Space complexity: O(N)
+// Space complexity: O(M)
