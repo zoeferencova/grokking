@@ -46,4 +46,5 @@ function search_quadruplets(arr, target) {
 console.log(search_quadruplets([4, 1, 2, -1, 1, -3], 1));
 console.log(search_quadruplets([2, 0, -1, 1, -2, 2], 2));
 
-// Sorting the array will take O(N*logN). Overall searchQuadruplets() will take O(N * logN + N^3), which is asymptotically equivalent to O(N^3).
+// Time complexity: sorting the array will take O(N*logN). Overall searchQuadruplets() will take O(N * logN + N^3), which is asymptotically equivalent to O(N^3).
+// Space complexity: O(N)
