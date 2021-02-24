@@ -30,3 +30,41 @@ console.log(`${find_happy_number(12)}`)
   
 // Time complexity: O(log(N))
 // Space complexity: O(1)
+
+// Recursive approach
+const find_happy_number_r = function(num) {
+    let result = false;
+    let array = num.toString().split('').map(n => n * n)
+    let sum = array.reduce((a, b) => a + b)
+    if (sum === 1){
+        return true;
+    // Cycle will always hit 4 if not a happy number
+    } else if (sum === 4){
+        return false;
+    } else {
+        result = find_happy_number_r(sum)
+    }
+    return result;
+}
+
+console.log(find_happy_number_r(23));
+console.log(find_happy_number_r(12));
+
+
+// Hash table approach
+const find_happy_number_hash = function(num) {
+    const seen = {};
+    while (n !== 1 && !seen[num]) {
+        seen[num] = true;
+        num = find_square_sum_hash(num);
+    }
+    return n === 1 ? true : false;
+}
+
+const find_square_sum_hash = function(numString) {
+    // Second argument 0 means that initial accumulator (sum)
+    // value will be 0.
+    return numString.toString().split("").reduce((sum, num) => {
+        return sum + Math.pow(num, 2);
+    }, 0)
+}
