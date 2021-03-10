@@ -22,44 +22,28 @@ class Node {
   
   
 const reverse_every_k_elements = function(head, k) {
-    let leader = null, first = head;
-    while (first !== null) {
-        // find last node in sublist and assign follower to next node
-        last = find_last(first, k);
-        follower = last.next;
-    
-        // reverse sublist
-        reverse(first, last, follower);
-    
+    let current = head, previous = null;
+    while (current !== null) {    
+        const leader = previous;
+        const last = current;
+        let next = null, i = 0;
+
+        while (current !== null && i < k) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+            i++;
+        }
+        
         // connect new first item to leader or set to head if first sublist
-        first !== head ? leader.next = last : head = last;
-    
+        leader !== null ? leader.next = previous : head = previous;
+
         // connect new last item to follower and assign new leader and first
-        first.next = follower;
-        leader = first;
-        first = leader.next;
+        last.next = current;
+        previous = last;
     }
     return head;
-  }
-  
-const find_last = function(first, k) {
-    let i = 1;
-    while (i < k && first.next !== null) {
-        first = first.next;
-        i++;
-    }
-    return first;
-}
-  
-const reverse = function(head, tail, follower) {
-    let current = head, previous = null;
-    while (current !== follower) {
-        let next = current.next;
-        current.next = previous;
-        previous = current;
-        current = next;
-    }
-   return previous;
 }
 
 
