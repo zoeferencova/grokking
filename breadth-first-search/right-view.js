@@ -10,15 +10,14 @@ const tree_right_view = function(root) {
     queue.push(root);
   
     while (queue.length) {
-        let levelSize = queue.length, level = [];
+        let levelSize = queue.length;
         for (let i = 0; i < levelSize; i++) {
             const currentNode = queue.shift();
-            level.push(currentNode.value);
+            if (i === levelSize - 1) result.push(currentNode.value)
     
             if (currentNode.left) queue.push(currentNode.left);
             if (currentNode.right) queue.push(currentNode.right);
         }
-        result.push(level[levelSize-1]);
     }
     return result;
 };
