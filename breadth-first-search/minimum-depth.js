@@ -1,29 +1,28 @@
-// Given a binary tree, populate an array to represent the averages of all of its levels.
+// Find the minimum depth of a binary tree. The minimum depth is the number of nodes along the shortest path from the root node to the nearest leaf node.
 
 // Solution
-const find_level_averages = function(root) {
-    result = [];
-    if (root === null) return result;
+const find_minimum_depth = function(root) {
+    if (root === null) return 0;
   
     const queue = new Deque();
     queue.push(root);
+    let minDepth = 0;
   
     while (queue.length) {
         const levelSize = queue.length;
-        let levelTotal = 0;
+        minDepth++;
     
         for (let i = 0; i < levelSize; i++) {
             const currentNode = queue.shift();
-            levelTotal += currentNode.value;
     
+            if (currentNode.left === null && currentNode.right === null) {
+            return minDepth;
+            } else {
             if (currentNode.left) queue.push(currentNode.left);
             if (currentNode.right) queue.push(currentNode.right);
+            }
         }
-        
-        result.push(levelTotal/levelSize);
     }
-  
-    return result;
 };
 
 // Time complexity: O(n)
