@@ -56,5 +56,5 @@ function count_paths_recursive(currentNode, S, currentPath) {
     return pathCount;
 }
 
-// Time complexity: O(n)
+// Time complexity: O(n^2)
 // Space complexity: O(n)
