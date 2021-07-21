@@ -53,3 +53,6 @@ function search_next_letter(letters, key) {
 console.log(search_next_letter(['a', 'c', 'f', 'h'], 'f'));
 console.log(search_next_letter(['a', 'c', 'f', 'h'], 'b'));
 console.log(search_next_letter(['a', 'c', 'f', 'h'], 'm'));
+
+// Space complexity: O(log N)
+// Time complexity: O(1)
