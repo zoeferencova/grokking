@@ -25,3 +25,6 @@ function find_k_largest_numbers(nums, k) {
 
 console.log(`Here are the top K numbers: ${find_k_largest_numbers([3, 1, 5, 12, 2, 11], 3)}`);
 console.log(`Here are the top K numbers: ${find_k_largest_numbers([5, 12, 11, -1, 12], 3)}`);
+
+// Time complexity: O(N * logK)
+// Space complexity: O(K)
